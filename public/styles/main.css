@@ -3,10 +3,43 @@ body {
 }
 
 .navbar {
-    background-color: #800000;
-    color: white;
+    background-color: white;
+    color: black;
+    box-shadow: none;
 }
 
 .page-container {
     margin-top: 75px;
+}
+
+#navbarButton {
+    background-color: #800000;
+    color: white;
+    border-radius: 5px;
+}
+
+#mainPage {
+    display: flex;
+}
+
+#mainCarImage {
+    width: 110%;
+}
+
+#introContainer {
+    align-items: center;
+}
+
+#introContainer > h2 {
+    text-align: center;
+}
+
+#registerButton {
+    background-color: #800000;
+    color: white;
+    font-size: 3em;
+    padding: 10px;
+    FONT-WEIGHT: 100;
+    border-radius: 5px;
+
 }

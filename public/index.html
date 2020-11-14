@@ -11,11 +11,57 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-dark fixed-top">
-    <a class="navbar-brand" href="#">Rose TRM</a>
-  </nav>
-  <div id="mainPage" class="container page-container">
+<!--  <nav class="navbar navbar-dark fixed-top">-->
+<!--    <a class="navbar-brand" href="#">Rose TRM</a>-->
+<!--  </nav>-->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+  <a class="navbar-brand" href="#">Rose TRM</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="about.html">About</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="videos.html">Videos</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="cars.html">Cars</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="events.html">Events</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Get BIC Access</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="photos.html">Photos</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="faq.html">FAQ</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="officers.html">Officers</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="contact.html">Contact Us</a>
+      </li>
+      <button class="btn btn-raised btn-primary my-2 my-sm-0" id="navbarButton">Login</button>
+    </ul>
+  </div>
+</nav>
+  <div id="mainPage" class="container page-container">
+    <div id="introContainer">
+      <h2>We Work!</h2>
+      <h2>We Race!</h2>
+      <h2>We Have Fun!</h2>
+      <p>A student led club here at Rose-Hulman. We maintain and race an assortment of cars. Works days are Saturday at the BIC!</p>
+      <button class="btn btn-raised btn-primary" id="registerButton">Register!</button>
+    </div>
+    <div id="imageContainer"><img src="images/car1.jpg" alt="car built by TRM" id="mainCarImage"></div>
 
   </div>
   <script src="scripts/jquery.min.js"></script>
@@ -27,6 +73,7 @@
   <script src="/__/firebase/7.18.0/firebase-auth.js"></script>
   <script src="/__/firebase/7.18.0/firebase-firestore.js"></script>
   <script src="/__/firebase/init.js"></script>
+  <script src="scripts/rosefire.min.js"></script>
   <script src="scripts/main.js"></script>
 </body>
 
