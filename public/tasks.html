@@ -2,10 +2,108 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
+    <link rel="stylesheet" href="styles/bootstrap-material-design.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Rose TRM</title>
 </head>
 <body>
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <a class="navbar-brand" href="/">Rose TRM</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="videos.html">Videos</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="cars.html">Cars</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="events.html">Events</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Get BIC Access</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="photos.html">Photos</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="faq.html">FAQ</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="officers.html">Officers</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+            <button class="btn btn-raised btn-primary my-2 my-sm-0" id="logoutButton">Log Out</button>
+        </ul>
+    </div>
+</nav>
+<div id="tasksPage" class="container page-container">
+    <div id="taskContainer"></div>
+</div>
 
+<button id="fab" type="button" class="btn bmd-btn-fab" data-toggle="modal" data-target="#addTaskDialog">
+    <i class="material-icons">add</i>
+</button>
+
+<!--Info Modal-->
+<div class="modal fade" id="infoModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Task Information</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body"></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Add Modal-->
+<div class="modal fade" id="addTaskDialog" tabindex="-1" role="dialog" aria-labelledby="add task dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Task</h5>
+            </div>
+            <div class="modal-body">
+
+                <div class="form-group bmd-form-group">
+                    <label for="inputName" class="bmd-label-floating">Name</label>
+                    <input type="text" class="form-control" id="inputName">
+                </div>
+                <div class="form-group bmd-form-group">
+                    <label for="inputInfo" class="bmd-label-floating">Info</label>
+                    <input type="text" class="form-control" id="inputInfo">
+                </div>
+                <div class="form-group bmd-form-group">
+                    <label for="inputMembers" class="bmd-label-floating">Members</label>
+                    <input type="text" class="form-control" id="inputMembers">
+                    <span class="bmd-help">Please submit one Rose username.</span>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">CANCEL</button>
+                <button id="submitAddTask" type="button" class="btn btn-primary" data-dismiss="modal">ADD</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="scripts/jquery.min.js"></script>
 <script src="scripts/popper.js"></script>

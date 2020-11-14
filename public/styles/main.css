@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 body {
     background: #DDDDDD;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .navbar {
@@ -12,7 +15,8 @@ body {
     margin-top: 75px;
 }
 
-#navbarButton {
+#navbarButton,
+#logoutButton {
     background-color: #800000;
     color: white;
     border-radius: 5px;
@@ -22,24 +26,54 @@ body {
     display: flex;
 }
 
+#navbarSupportedContent {
+    padding-left: 20vw;
+}
+
 #mainCarImage {
     width: 110%;
 }
 
 #introContainer {
     align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
-#introContainer > h2 {
+.motto {
     text-align: center;
 }
 
 #registerButton {
     background-color: #800000;
     color: white;
-    font-size: 3em;
-    padding: 10px;
+    font-size: 1.5em;
+    padding: 15px 50px;
     FONT-WEIGHT: 100;
     border-radius: 5px;
+}
 
+.card {
+    margin: 10px 0;
+}
+
+#tasksPage .card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    text-overflow: ellipsis;
+}
+
+#fab {
+    display: none;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background-color: #800000;
+    color: white;
+}
+
+#fab:active {
+    transform: translateY(2px);
+    opacity: 0.8;
 }
