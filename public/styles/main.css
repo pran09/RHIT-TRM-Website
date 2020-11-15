@@ -23,7 +23,7 @@ body {
 }
 
 #mainPage {
-    display: flex;
+    display: block;
 }
 
 #navbarSupportedContent {
@@ -65,7 +65,7 @@ body {
 }
 
 #fab {
-    display: none;
+    /*display: none;*/
     position: fixed;
     right: 10px;
     bottom: 10px;

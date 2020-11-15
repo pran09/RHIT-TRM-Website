@@ -20,15 +20,25 @@ trm.MainPageController = class {
 			trm.authManager.signIn();
 			this.updateView();
 		};
+		document.querySelector('#registerButton').onclick = () => {
+			trm.authManager.signIn();
+			this.updateView();
+		}
 	}
 
 	updateView() {
 		if (trm.authManager.isSignedIn) {
 			const navbarButton = document.querySelector('#navbarButton');
-			navbarButton.innerText = 'Tasks';
+			navbarButton.innerText = 'Sign Out';
 			navbarButton.onclick = () => {
-				window.location.href = "/tasks.html";
+				trm.authManager.signOut();
 			};
+
+			const registerButton = document.querySelector('#registerButton');
+			registerButton.innerText = 'Tasks';
+			registerButton.onclick = () => {
+				window.location.href = "/tasks.html";
+			}
 		}
 	}
 }
@@ -53,10 +63,8 @@ trm.TaskPageController = class {
 			// let userDoc = null;
 			let query = firebase.firestore().collection(trm.FB_COLLECTION_USERS).where("uid", "==", memberString).get()
 				.then(querySnapshot => {
-					return querySnapshot.docs[0];
-					// querySnapshot.forEach(doc => {
-					// 	userDoc = doc.id;
-					// });
+					console.log('is this the user id: ', querySnapshot.docs[0].id);
+					return querySnapshot.docs[0].id;
 				})
 				.then(doc => {
 					trm.taskManager.add(name, info, doc);
@@ -143,7 +151,7 @@ trm.TaskManager = class {
 		this._ref.add({
 			[trm.FB_KEY_NAME]: name,
 			[trm.FB_KEY_INFO]: info,
-			[trm.FB_KEY_MEMBER]: member,
+			[trm.FB_KEY_MEMBER]: firebase.firestore().collection(trm.FB_COLLECTION_USERS).doc(member),
 			[trm.FB_KEY_IS_APPROVED]: false,
 			[trm.FB_KEY_DATE_ASSIGNED]: firebase.firestore.Timestamp.now()
 		})
@@ -188,8 +196,8 @@ trm.TaskManager = class {
 		const docSnapshot = this._documentSnapshots[index];
 		const task = new trm.Task(
 			docSnapshot.id,
-			docSnapshot.get(trm.FB_KEY_INFO),
 			docSnapshot.get(trm.FB_KEY_NAME),
+			docSnapshot.get(trm.FB_KEY_INFO),
 			docSnapshot.get(trm.FB_KEY_IS_APPROVED)
 		);
 		return task;
